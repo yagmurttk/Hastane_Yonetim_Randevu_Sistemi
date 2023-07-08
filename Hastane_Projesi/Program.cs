@@ -16,7 +16,7 @@ namespace Hastane_Projesi
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmHastaGiris());
+            Application.Run(new FrmGirisler());
         }
     }
 }

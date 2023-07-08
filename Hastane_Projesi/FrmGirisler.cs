@@ -10,16 +10,32 @@ using System.Windows.Forms;
 
 namespace Hastane_Projesi
 {
-    public partial class Form1 : Form
+    public partial class FrmGirisler : Form
     {
-        public Form1()
+        public FrmGirisler()
         {
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            FrmHastaGiris fr = new FrmHastaGiris();
+            fr.Show();
+            this.Hide();
+        }
 
+        private void BtnDoktorGirisi_Click(object sender, EventArgs e)
+        {
+            FrmDoktorGiris fr = new FrmDoktorGiris();
+            fr.Show();
+            this.Hide();
+        }
+
+        private void BtnSekreterGirisi_Click(object sender, EventArgs e)
+        {
+            FrmSekreterGiris fr = new FrmSekreterGiris();
+            fr.Show();
+            this.Hide();
         }
     }
 }

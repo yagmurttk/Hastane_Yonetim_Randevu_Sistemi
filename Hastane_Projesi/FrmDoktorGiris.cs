@@ -11,40 +11,32 @@ using System.Data.SqlClient;
 
 namespace Hastane_Projesi
 {
-    public partial class FrmHastaGiris : Form
+    public partial class FrmDoktorGiris : Form
     {
-        public FrmHastaGiris()
+        public FrmDoktorGiris()
         {
             InitializeComponent();
         }
 
         SqlBaglantisi bgl = new SqlBaglantisi();
-        private void LnkUyeOl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            FrmHastaKayit fr = new FrmHastaKayit();
-            fr.Show();
-        }
-
         private void BtnGirisYap_Click(object sender, EventArgs e)
         {
-            SqlCommand komut = new SqlCommand("Select * From Tbl_Hastalar where HastaTC=@p1 and HastaSifre=@p2", bgl.baglanti());
+            SqlCommand komut = new SqlCommand("Select * From Tbl_Doktorlar where DoktorTc=@p1 and DoktorSifre=@p2", bgl.baglanti());
             komut.Parameters.AddWithValue("@p1", MskTc.Text);
             komut.Parameters.AddWithValue("@p2", TxtSifre.Text);
             SqlDataReader dr = komut.ExecuteReader();
             if (dr.Read())
             {
-                FrmHastaDetay fr = new FrmHastaDetay();
-                fr.tc = MskTc.Text;
+                FrmDoktorDetay fr = new FrmDoktorDetay();
+                fr.TC = MskTc.Text;
                 fr.Show();
                 this.Hide();
             }
             else
             {
-                MessageBox.Show("Hatalı Giriş Yaptınız.");
+                MessageBox.Show("Hatalı Kullanıcı Adı veya Şifre");
             }
             bgl.baglanti().Close();
         }
-
     }
-
 }

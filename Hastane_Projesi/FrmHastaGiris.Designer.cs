@@ -29,6 +29,7 @@ namespace Hastane_Projesi
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmHastaGiris));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -44,7 +45,7 @@ namespace Hastane_Projesi
             this.label1.Font = new System.Drawing.Font("Segoe Script", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label1.Location = new System.Drawing.Point(53, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(419, 67);
+            this.label1.Size = new System.Drawing.Size(335, 53);
             this.label1.TabIndex = 0;
             this.label1.Text = "Hasta Giriş Paneli";
             // 
@@ -53,7 +54,7 @@ namespace Hastane_Projesi
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(31, 106);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(155, 29);
+            this.label2.Size = new System.Drawing.Size(120, 23);
             this.label2.TabIndex = 1;
             this.label2.Text = "T C Kimlik No:";
             // 
@@ -62,7 +63,7 @@ namespace Hastane_Projesi
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(120, 143);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 29);
+            this.label3.Size = new System.Drawing.Size(50, 23);
             this.label3.TabIndex = 2;
             this.label3.Text = "Şifre:";
             // 
@@ -71,7 +72,7 @@ namespace Hastane_Projesi
             this.MskTc.Location = new System.Drawing.Point(192, 106);
             this.MskTc.Mask = "00000000000";
             this.MskTc.Name = "MskTc";
-            this.MskTc.Size = new System.Drawing.Size(184, 36);
+            this.MskTc.Size = new System.Drawing.Size(184, 30);
             this.MskTc.TabIndex = 3;
             this.MskTc.ValidatingType = typeof(int);
             // 
@@ -79,34 +80,39 @@ namespace Hastane_Projesi
             // 
             this.TxtSifre.Location = new System.Drawing.Point(192, 148);
             this.TxtSifre.Name = "TxtSifre";
-            this.TxtSifre.Size = new System.Drawing.Size(184, 36);
+            this.TxtSifre.Size = new System.Drawing.Size(184, 30);
             this.TxtSifre.TabIndex = 4;
+            this.TxtSifre.UseSystemPasswordChar = true;
             // 
             // LnkUyeOl
             // 
             this.LnkUyeOl.AutoSize = true;
             this.LnkUyeOl.Location = new System.Drawing.Point(391, 155);
             this.LnkUyeOl.Name = "LnkUyeOl";
-            this.LnkUyeOl.Size = new System.Drawing.Size(81, 29);
+            this.LnkUyeOl.Size = new System.Drawing.Size(62, 23);
             this.LnkUyeOl.TabIndex = 5;
             this.LnkUyeOl.TabStop = true;
             this.LnkUyeOl.Text = "Üye Ol";
+            this.LnkUyeOl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LnkUyeOl_LinkClicked);
             // 
             // BtnGirisYap
             // 
-            this.BtnGirisYap.Location = new System.Drawing.Point(266, 190);
+            this.BtnGirisYap.Location = new System.Drawing.Point(266, 184);
             this.BtnGirisYap.Name = "BtnGirisYap";
-            this.BtnGirisYap.Size = new System.Drawing.Size(110, 44);
+            this.BtnGirisYap.Size = new System.Drawing.Size(110, 33);
             this.BtnGirisYap.TabIndex = 6;
             this.BtnGirisYap.Text = "Giriş Yap";
             this.BtnGirisYap.UseVisualStyleBackColor = true;
+            this.BtnGirisYap.Click += new System.EventHandler(this.BtnGirisYap_Click);
             // 
             // FrmHastaGiris
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
+            this.AcceptButton = this.BtnGirisYap;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(500, 258);
+            this.ClientSize = new System.Drawing.Size(478, 236);
             this.Controls.Add(this.BtnGirisYap);
             this.Controls.Add(this.LnkUyeOl);
             this.Controls.Add(this.TxtSifre);
@@ -115,9 +121,12 @@ namespace Hastane_Projesi
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Corbel", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MaximizeBox = false;
             this.Name = "FrmHastaGiris";
-            this.Text = "FrmHastaGiris";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Hasta Giriş Paneli";
             this.ResumeLayout(false);
             this.PerformLayout();
 
